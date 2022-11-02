@@ -1,0 +1,49 @@
+#title{
+  background-color: rosybrown;
+}
+
+#features{
+  background-color: white;
+  padding: 7%
+}
+
+.feature-box{
+  text-align: center;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.header-view{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.feature{  
+  stroke: white;
+}
+
+h1{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 800;
+}
+
+h3{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.ml-5 {
+  margin-left: 2.5rem !important;
+}
+
+.mr-5 {
+  margin-right: 2.5rem !important;
+}
+
+.bg-green{
+  background-color: green;
+}
