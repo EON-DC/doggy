@@ -4,7 +4,13 @@
 
 #features{
   background-color: white;
-  padding: 7%
+  border-color: black;
+  border-style: dotted;
+  padding-top: 13%;
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-bottom: 13%;
+  
 }
 
 .feature-box{
@@ -23,8 +29,10 @@
   line-height: 1.5;
 }
 
+
 .feature{  
   stroke: white;
+  
 }
 
 h1{
@@ -33,6 +41,10 @@ h1{
 }
 
 h3{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.eleg{
   font-family: 'Times New Roman', Times, serif;
 }
 
@@ -46,4 +58,19 @@ h3{
 
 .bg-green{
   background-color: green;
+}
+.bg-blue{
+  background-color: aqua;
+}
+.bg-doge{
+ background-image: url(/images/doge.svg); 
+ background-position: 
+    center;
+ background-repeat: no-repeat;
+ background-size: 50%;
+}
+
+ul{
+  list-style:none;
+  padding-left: 0;
 }

@@ -40,27 +40,23 @@
     <title>flask</title>
     <path fill-rule="evenodd" clip-rule="evenodd" d="M288 0H160 128C110.3 0 96 14.3 96 32s14.3 32 32 32V196.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6C0 480.9 31.1 512 69.4 512H378.6c38.3 0 69.4-31.1 69.4-69.4c0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32s-14.3-32-32-32H288zM192 196.8V64h64V196.8c0 23.7 6.6 46.9 19 67.1L309.5 320h-171L173 263.9c12.4-20.2 19-43.4 19-67.1z"/>
     </symbol>
-
-    
-
-
-
   </svg>
 
-  <section id="title">
-  <!-- Nav Bar -->
+  <div class="container-fluid">
 
+  
+  <!-- Nav Bar -->
+  <section id="title">
   <header class="p-3 text">
-    <div class="row">
-      <div class="col-1"></div>
-      <div class="container col-10">
+    <div class="row">      
+      <div class="container col-12">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
             <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>    
           </a>
   
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+            <li><a href="#" class="nav-link px-2 text-black">Home</a></li>
             <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
             <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
             <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
@@ -77,7 +73,7 @@
           </div>
         </div>
       </div>
-      <div class="col-1"></div>
+      
     </div>
     
   </header>
@@ -86,9 +82,9 @@
 
     <div class="row">
       <div class="col-lg-1"></div>
-      <div class="col-lg-5">
-        <h1 class="header-view">Meet new and interesting dogs nearby.</h1>
-        <button type ="button" class="btn btn-dark btn-lg">
+      <div class="col-lg-5 pt-5">
+        <h1 class="header-view mb-3">Meet new and interesting dogs nearby.</h1>
+        <button type ="button" class="btn btn-dark btn-lg me-3">
           <svg class="bi me-2" width="20" height="23" role="img" aria-label="apple"><use xlink:href="#apple"/></svg>Download</button>
         <button type ="button" class="btn btn-outline-light btn-lg">
           <svg class="bi me-2" width="20" height="20" role="img" aria-label="android"><use xlink:href="#android"/></svg>Download</button>
@@ -102,7 +98,7 @@
   </section>
 
   <!-- Features -->
-  <section id="features">
+  <section id="features" >
   <div class="row">
 
     <div class="col-lg-4">
@@ -127,26 +123,86 @@
       <h3 class="mt-2">Guaranteed to work.</h3>
     <p>Find the love of your dogs's life or your money back.</p>
     </div>
-  </div>   
-    
-    
+  </div>
+  </div>
 
   </section>
   
   <!-- Testimonials -->
-  <section id="testimonials">
+  <section id="testimonials" class="bg-doge">
+    <div class="row d-flex justify-content-around">
+      <div class="col-md-6">
+        <h2 class="bg-blue ">최근 올라온 글 확인</h2>
+        <ul class="bg-green">
+          <li>Lorem ipsum dolor sit amet, </li>
+          <li>consectetur adipisicing elit.</li>
+          <li>Eum inventore, repellat</li>
+          <li>asperiores adipisci architecto</li>
+          <li>quaerat unde modi assumenda,</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <div class="row align-content-between">
+          <div class="col-10">
+            <h2 class="eleg">To do list</h2>
+          </div>
+          <div class="col-2">
+            <a href="#" type="button" class="btn btn-dark">add</a>
+          </div>
 
-    <h2>I no longer have to sniff other dogs for love. I've found the hottest Corgi on TinDog. Woof.</h2>
-
-  <img src="images/dog_img01.jpg" alt="dog-profile">
-  <em>Pebbles, New York</em>
-
-  </section>
+        </div>
+        <ul class="">
+          <li>Lorem ipsum dolor sit amet, </li>
+          <li>consectetur adipisicing elit.</li>
+          <li>Eum inventore, repellat</li>
+          <li>asperiores adipisci architecto</li>
+          <li>quaerat unde modi assumenda,</li>
+        </ul>
+      </div>
+    </div>
+   </section>
 
   <!-- Press -->
   <section id="press">
-    <img src="images/dog_img02.jpg" alt="dog_img02">
-    <img src="images/dog_img03.webp" alt="dog_img03">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="images/dog_img01.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">A Black dog</h5>
+            <p class="card-text">Pebbles, New York</p>
+            <div class="text-end">
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="images/dog_img02.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">A Black dog</h5>
+            <p class="card-text">Pebbles, New York</p>
+            <div class="text-end">
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="images/dog_img03.webp" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">A Black dog</h5>
+            <p class="card-text">Pebbles, New York</p>
+            <div class="text-end">
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <img src="images/dog_img04.jpg" alt="dog_img04">
   </section>
 
@@ -171,5 +227,6 @@
 
 
   </section>
+</div>
 </body>
 </html>
