@@ -1,4 +1,4 @@
-package com.doggy.domain;
+package com.doggy.subtype.domain;
 
 import lombok.*;
 import org.hibernate.validator.constraints.Length;
@@ -18,7 +18,7 @@ public class Account {
     @Id
     @GeneratedValue
     @Column(name = "member_id")
-    private Long Id;
+    private Long id;
 
     @NotNull
     @Length(max = 12)
@@ -42,7 +42,8 @@ public class Account {
     private LocalDateTime lastModifiedDate;
 
     @Builder
-    public Account(String loginId, String loginPw, String profileName, String email) {
+    public Account(Long id, String loginId, String loginPw, String profileName, String email) {
+        this.id = id;
         this.loginId = loginId;
         this.loginPw = loginPw;
         this.profileName = profileName;

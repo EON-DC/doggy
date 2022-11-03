@@ -1,13 +1,15 @@
-package com.doggy.service;
+package com.doggy.subtype.service;
 
-import com.doggy.domain.Account;
-import com.doggy.repository.AccountRepository;
+import com.doggy.subtype.domain.Account;
+import com.doggy.subtype.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class AccountService {
     private final AccountRepository accountRepository;

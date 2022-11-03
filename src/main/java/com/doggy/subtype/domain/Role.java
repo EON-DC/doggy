@@ -1,4 +1,4 @@
-package com.doggy.domain;
+package com.doggy.subtype.domain;
 
 public enum Role {
     ADMIN, USER
