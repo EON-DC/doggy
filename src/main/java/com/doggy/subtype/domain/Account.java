@@ -2,13 +2,14 @@ package com.doggy.subtype.domain;
 
 import lombok.*;
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.UniqueElements;
+import org.springframework.util.Assert;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -20,7 +21,7 @@ public class Account {
     @Column(name = "member_id")
     private Long id;
 
-    @NotNull
+    @UniqueElements
     @Length(max = 12)
     private String loginId;
 
@@ -28,29 +29,37 @@ public class Account {
     @Length(max = 12)
     private String loginPw;
 
-    @NotNull
+    @UniqueElements
     @Length(max = 10)
     private String profileName;
-
-
     private String email;
 
-    private Integer profileImageCode;
-    private Role role;
+    private Integer profileImageCode = null;
+
+    private Role role = Role.USER;
+
+    @OneToMany(mappedBy = "account")
+    private List<TodoList> todoList = new ArrayList<>();
+
 
     private LocalDateTime createdDate;
     private LocalDateTime lastModifiedDate;
 
-    @Builder
-    public Account(Long id, String loginId, String loginPw, String profileName, String email) {
-        this.id = id;
+    public Account(String loginId, String loginPw, String profileName, String email) {
+        Assert.hasText(loginId, "loginId must not be empty");
+        Assert.hasText(loginPw, "loginPw must not be empty");
+        Assert.hasText(profileName, "profileName must not be empty");
+        Assert.hasText(email, "email must not be empty");
+
         this.loginId = loginId;
         this.loginPw = loginPw;
         this.profileName = profileName;
         this.email = email;
+        this.createdDate = LocalDateTime.now();
     }
 
     public void changeProfileName(String name) {
         this.profileName = name;
+        lastModifiedDate = LocalDateTime.now();
     }
 }

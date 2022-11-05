@@ -15,14 +15,6 @@ public class AccountController {
 
     private final AccountService accountService;
 
-    @PostMapping("/accounts")
-    public String registerAccount(@RequestBody AccountDTO accountDTO){
-        Account account = accountDTO.mapperDTOToAccount();
-        accountService.save(account);
-        StringBuilder sb = new StringBuilder();
-        sb.append("saved : ").append(account.getLoginId());
-        return sb.toString();
-    }
 
 
 

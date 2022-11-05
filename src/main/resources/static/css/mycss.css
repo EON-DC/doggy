@@ -62,12 +62,8 @@ h3{
 .bg-blue{
   background-color: aqua;
 }
-.bg-doge{
- background-image: url(/images/doge.svg); 
- background-position: 
-    center;
- background-repeat: no-repeat;
- background-size: 50%;
+.bg-olive{
+ background-color: #808000;
 }
 
 ul{
