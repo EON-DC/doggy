@@ -36,5 +36,13 @@ public class AccountService {
         return findAccount.get().getId();
     }
 
+    public Account loginById(String userLoginId){
+        Optional<Account> findAccount = accountRepository.findByLoginId(userLoginId);
+        if (findAccount.isPresent()) {
+            return findAccount.get();
+        } else {
+            throw new NotFountAccountException("찾을 수 없는 회원이거나 비밀번호가 ")
+        }
+    }
 
 }
