@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinDog</title>
+    <!--  자바스크립트-->
+
+    <!--    CSS  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/mycss.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>회원 가입</h1>
+
+    <form th:action="@{/login}" th:object="${loginDTO}" method="post">
+        <!-- Add hidden form field to handle update -->
+        <input type="hidden" th:field="*{id}" />
+        <div>
+            <label>ID</label>
+            <input type="text" th:field="*{dateField}" placeholder="아이디" />
+<!--            <input type="text" th:field="*{dateField}" th:class="${#fields.hasErrors('dateField')}? fieldError" />-->
+<!--            <input type="text" th:field="*{dateField}" class="form-input" th:errorclass="error" />-->
+
+<!--            <p th:each="error : ${#fields.errors('dateField')}" th:text="${error}"></p>-->
+        </div>
+        <div>
+            <label>PASSWORD</label>
+            <input type="password" th:field="*{password}" placeholder="비밀번호">
+        </div>
+        <input class="btn btn-primary btn-md" type="submit" value="로그인">
+        <input class="btn btn-gray btn-md" type="button" href="@{/}" value="홈으로 돌아가기">
+    </form>
+
+</body>
+</html>

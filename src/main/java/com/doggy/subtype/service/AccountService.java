@@ -1,6 +1,7 @@
 package com.doggy.subtype.service;
 
 import com.doggy.subtype.domain.Account;
+import com.doggy.subtype.dto.AccountDTO;
 import com.doggy.subtype.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,14 @@ public class AccountService {
         // todo : null 일 경우 예외 발생
         inputAccount.changeProfileName(name);
         return account.getId();
+    }
+
+    public Long edit(AccountDTO accountDTO) {
+        Optional<Account> findAccount = accountRepository.findById(accountDTO.getId());
+        if (findAccount.isPresent()) {
+            // todo : dto 변환, null 파트 제외하고 변경 부분 수정.
+        }
+        return findAccount.get().getId();
     }
 
 

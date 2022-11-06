@@ -22,12 +22,7 @@ class AccountServiceTest {
     @Transactional
     @DisplayName("계정을 등록하면 Repository에서 조회할 수 있어야합니다")
     public void test1(){
-        Account testAccount = Account.builder()
-                .profileName("Park")
-                .loginId("mun")
-                .loginPw("123")
-                .email("abc@fake")
-                .build();
+        Account testAccount = new Account("mun", "1234", "fake", "2@na.com");
         repository.save(testAccount);
         Optional<Account> findAccount = repository.findById(testAccount.getId());
         Account getAccount = findAccount.orElse(null);
@@ -38,12 +33,7 @@ class AccountServiceTest {
     @Transactional
     @DisplayName("잘못된 타입이 들어갈 경우 예외가 발생해야합니다.")
     public void test2(){
-        Account testAccount = Account.builder()
-                .profileName("Park")
-                .loginId("mun")
-                .loginPw("123")
-                .email("abc@fake")
-                .build();
+        Account testAccount = new Account("mun", "1234", "fake", "2@na.com");
         repository.save(testAccount);
 
     }

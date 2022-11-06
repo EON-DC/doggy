@@ -4,7 +4,11 @@ spring:
     url: jdbc:h2:tcp://localhost/~/doggy
     username: sa
     password:
-
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
 
   jpa:
     open-in-view: true

@@ -19,12 +19,7 @@ class AccountRepositoryTest {
     AccountRepository accountRepository;
     @Test
     void test01(){
-        Account testAccount = Account.builder()
-                .loginId("mun")
-                .loginPw("1234")
-                .profileName("EON")
-                .email("fake@fake.com")
-                .build();
+        Account testAccount = new Account("mun", "1234", "fake", "2@na.com");
         accountRepository.save(testAccount);
         Account findAccount = accountRepository.findById(testAccount.getId()).get();
         Assertions.assertThat(findAccount).isEqualTo(testAccount);

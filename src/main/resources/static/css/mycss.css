@@ -2,6 +2,10 @@
   background-color: rosybrown;
 }
 
+*{
+
+}
+
 #features{
   background-color: white;
   border-color: black;
@@ -10,7 +14,7 @@
   padding-left: 7%;
   padding-right: 7%;
   padding-bottom: 13%;
-  
+
 }
 
 .feature-box{
@@ -23,30 +27,23 @@
 }
 
 .header-view{
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+
   font-weight: 300;
   font-size: 3rem;
   line-height: 1.5;
 }
 
 
-.feature{  
+.feature{
   stroke: white;
-  
+
 }
 
 h1{
-  font-family: 'Times New Roman', Times, serif;
   font-weight: 800;
 }
 
-h3{
-  font-family: 'Times New Roman', Times, serif;
-}
-
-.eleg{
-  font-family: 'Times New Roman', Times, serif;
-}
 
 .ml-5 {
   margin-left: 2.5rem !important;
