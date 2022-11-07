@@ -27,6 +27,6 @@ public class loginController {
 
     @PostMapping
     public String login(LoginDTO loginDTO){
-        accountService
+        return "redirect:/";
     }
 }

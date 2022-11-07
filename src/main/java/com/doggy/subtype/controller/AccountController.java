@@ -19,6 +19,12 @@ public class AccountController {
         return "account/addForm";
     }
 
+    @PostMapping("/add")
+    public String accountAdd(AccountDTO dto){
+        Account account = new Account(dto.getLoginId(), dto.getLoginPw(), dto.getProfileName(),dto.getEmail());
+        accountService.save(account);
+        return "account/joinInfo";
+    }
 
 
 }

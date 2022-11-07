@@ -16,11 +16,13 @@ public class AccountDTO {
     private String profileName;
     private String email;
     private Integer profileImageCode;
-    private Role role;
+    private Role role = Role.USER;
     private LocalDateTime createdDate;
     private LocalDateTime lastModifiedDate;
 
     public AccountDTO() {
+        createdDate = LocalDateTime.now();
+        lastModifiedDate = createdDate;
     }
 
 }

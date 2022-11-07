@@ -2,6 +2,7 @@ package com.doggy.subtype.service;
 
 import com.doggy.subtype.domain.Account;
 import com.doggy.subtype.dto.AccountDTO;
+import com.doggy.subtype.exception.controller_exception.NotFoundAccountException;
 import com.doggy.subtype.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -41,7 +42,7 @@ public class AccountService {
         if (findAccount.isPresent()) {
             return findAccount.get();
         } else {
-            throw new NotFountAccountException("찾을 수 없는 회원이거나 비밀번호가 ")
+            throw new NotFoundAccountException("찾을 수 없는 회원이거나 비밀번호가 ");
         }
     }
 
