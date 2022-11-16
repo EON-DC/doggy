@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="fragment-header(title)">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS 링크 -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" href="/static/css/bootstrap.css" type="text/css"
+          media="all"/>
+    <link rel="stylesheet" th:href="@{/css/mycss.css}" href="/static/css/mycss.css" type="text/css" media="all"/>
+
+    <!-- 스크립트 링크-->
+    <script type="text/javascript" src=""></script>
+    <title th:text="${title}">타이틀</title>
+
+</div>
+
+<div th:fragment="nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">게시판</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-inline-flex">
+                    <input class="form-control me-2" type="search" placeholder="검색" aria-label="검색">
+                    <button class="btn btn-outline-dark" type="submit">검색</button>
+                </form>
+        </div>
+    </nav>
+</div>
