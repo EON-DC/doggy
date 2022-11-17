@@ -1,5 +1,6 @@
 package com.doggy.member;
 
+import com.doggy.auth.ApplicationUserRole;
 import com.doggy.board.Board;
 import com.doggy.todo.Todo;
 import lombok.Getter;

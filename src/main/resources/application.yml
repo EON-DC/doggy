@@ -1,4 +1,7 @@
 spring:
+  main:
+    allow-circular-references: true
+
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:tcp://localhost/~/doggy
@@ -21,3 +24,4 @@ spring:
 logging:
   level:
     org.hibernate.SQL: debug
+

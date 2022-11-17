@@ -1,4 +1,4 @@
-package com.doggy.member;
+package com.doggy.auth;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
