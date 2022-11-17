@@ -1,4 +1,4 @@
-package com.doggy.security;
+package com.doggy.member;
 
 public class ApplicationUserPermission {
 }

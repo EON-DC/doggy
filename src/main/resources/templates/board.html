@@ -53,14 +53,50 @@
 </div>
 
 <div id="page-wrapper">
-    <div th:replace="/fragments/header.html :: left-bar" >
-        todo listsdfsdf
+    <div th:replace="/fragments/header.html :: left-bar" id="sidebar-wrapper" class="bg-dark text-white">
+        <div class="pt-4">To Do list</div>
+        <hr class="border-white">
+        <ul class="list-group ms-lg-4">
+            <li>text1</li>
+            <li>text2</li>
+            <li>text3</li>
+            <li>text4</li>
+        </ul>
     </div> <!-- left side bar end -->
 
     <div id="page-content-wrapper">
-        <div class="container-fluid text-center ">
-          <h1 class="pt-4">연습용 작업장</h1>
-
+        <div class="container-fluid bg-light p-0 text-center ">
+          <h1>게시판</h1>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th colspan="2" scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+              <td>@twitter</td>
+            </tr>
+            </tbody>
+          </table>
         </div>
 
     </div>
