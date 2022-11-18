@@ -35,11 +35,24 @@ public class Member {
     @Enumerated(EnumType.STRING)
     private ApplicationUserRole userRole;
 
+    // 생성자
+    public Member() {    }
+
+    public Member(String username, String password, ApplicationUserRole userRole) {
+        this.username = username;
+        this.password = password;
+        this.userRole = userRole;
+        createdTime = LocalDateTime.now();
+    }
+
+
     //== 수정 메소드 ==//
     public void updateMember(String username, String password) {
         this.username = username;
         this.password = password;
     }
+
+
 
 
 }
