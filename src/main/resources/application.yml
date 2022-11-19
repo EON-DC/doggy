@@ -3,10 +3,13 @@ spring:
     allow-circular-references: true
 
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:tcp://localhost/~/doggy
-    username: sa
-    password:
+    name: dashboard
+    generate-unique-name: false
+
+  #    driver-class-name: org.h2.Driver
+  #    url: jdbc:h2:tcp://localhost/~/doggy
+  #    username: sa
+  #    password:
   http:
     encoding:
       charset: UTF-8
@@ -20,6 +23,9 @@ spring:
     show-sql: true
     properties:
       hibernate.format_sql: true
+  h2:
+    console:
+      enabled: true
 
 logging:
   level:
