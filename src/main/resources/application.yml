@@ -3,7 +3,7 @@ spring:
     allow-circular-references: true
 
   datasource:
-    name: dashboard
+    name: blog
     generate-unique-name: false
 
   #    driver-class-name: org.h2.Driver
