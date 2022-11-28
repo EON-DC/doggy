@@ -35,14 +35,16 @@ public class ProductController {
         return "deleted done : " + productId;
     }
 
-    @PutMapping(path = "{productId}")
-    public Product updateProduct(@PathVariable("productId") Product product) {
+    @PutMapping(path = "update/{productId}")
+    public Product updateProduct(@PathVariable("productId") Long productId, @RequestBody Product product) {
         productService.updateProduct(product);
         return product;
     }
 
     @GetMapping(path = "find/{productName}")
-    public Product findProduct(@PathVariable("productName")String name){
+    public List<Product> findProduct(@PathVariable("productName")String name){
         return productService.findByName(name);
     }
+
+
 }

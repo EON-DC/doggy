@@ -39,9 +39,7 @@ public class ProductService {
         return productId;
     }
 
-    public Product findByName(String name) {
-        Product findOne = productRepository.findByName(name)
-                .orElseThrow(() -> new IllegalStateException("cannot fount name: " + name));
-        return findOne;
+    public List<Product> findByName(String name) {
+        return productRepository.findByName(name);
     }
 }
