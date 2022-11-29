@@ -34,9 +34,6 @@ public class ControllerTest {
     @MockBean
     private ProductService productService;
 
-    @MockBean
-    private ProductRepository productRepository;
-
     @Test
     @DisplayName("다 가져올 수 있는지?")
     void tdd_for_getProduct() throws Exception {
