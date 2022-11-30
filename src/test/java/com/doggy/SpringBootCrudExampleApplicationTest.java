@@ -55,8 +55,8 @@ public class SpringBootCrudExampleApplicationTest {
 
     @Test
     @DisplayName("get 접속 시 전체 제품 가져와야함")
-    @Sql(statements = "INSERT INTO product(id, name, stock, price) values (4, 'AC', 1, 34000)", executionPhase = BEFORE_TEST_METHOD)
-    @Sql(statements = "DELETE PRODUCT where product.id=4", executionPhase = AFTER_TEST_METHOD)
+    @Sql(statements = "insert into product values(4, 'r', 1000, 3, null)", executionPhase = BEFORE_TEST_METHOD)
+    @Sql(statements = "DELETE PRODUCT where product_id=4", executionPhase = AFTER_TEST_METHOD)
     void tdd_for_getProduct() {
         // given
         // when
@@ -69,8 +69,8 @@ public class SpringBootCrudExampleApplicationTest {
 
     @Test
     @DisplayName("전체 제품 가져오기")
-    @Sql(statements = "INSERT INTO PRODUCT(id, name, stock, price) values (2, 'BC', 3, 12000)", executionPhase = BEFORE_TEST_METHOD)
-    @Sql(statements = "DELETE PRODUCT where id=2", executionPhase = AFTER_TEST_METHOD)
+    @Sql(statements = "INSERT INTO Product values (2, 'BC', 3, 12000, null)", executionPhase = BEFORE_TEST_METHOD)
+    @Sql(statements = "DELETE PRODUCT where product_id=2", executionPhase = AFTER_TEST_METHOD)
     void tdd_for_getOneProduct() {
         // given
         Product product = restTemplate.getForObject(baseUrl + "/{id}", Product.class, 2);
@@ -86,7 +86,7 @@ public class SpringBootCrudExampleApplicationTest {
 
     @Test
     @DisplayName("find/{name} 이름으로 검색 가능해야함")
-    @Sql(statements = "INSERT INTO Product(id, name, stock, price) values (5, 'findMe', 5, 1000)",
+    @Sql(statements = "INSERT INTO Product(product_id, name, stock, price, category_id) values (5, 'findMe', 5, 1000, null)",
             executionPhase = BEFORE_TEST_METHOD)
     void tdd_for_findByProductName() {
         // given

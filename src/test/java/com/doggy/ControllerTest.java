@@ -1,6 +1,7 @@
 package com.doggy;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -34,16 +35,27 @@ public class ControllerTest {
     @MockBean
     private ProductService productService;
 
+    Product product1;
+    Product product2;
+    Product product3;
+    Product product4;
+
+    @BeforeEach
+    void beforeEach() {
+        product1 = new Product(1L, "CD", 3, 20000);
+        product2 = new Product(3L, "D/C", 300, 1000);
+        product3 = new Product(5L, "Movie", 23234, 12200);
+        product4 = new Product(11L, "Cup", 13413, 23300);
+
+    }
+
     @Test
     @DisplayName("다 가져올 수 있는지?")
     void tdd_for_getProduct() throws Exception {
 
-
-        Product product = new Product(1L, "CD", 3, 20000);
-
         // given
         given(productService.findByIdProduct(1L))
-                .willReturn(product);
+                .willReturn(product1);
 
         mockMvc.perform(get("/api/v1/products/1"))
                 .andExpect(status().isOk())
@@ -59,11 +71,6 @@ public class ControllerTest {
     @DisplayName("")
     void tdd_for_getAllProduct() throws Exception{
         // given
-        Product product1 = new Product(1L, "Book", 3, 20000);
-        Product product2 = new Product(3L, "D/C", 300, 1000);
-        Product product3 = new Product(5L, "Movie", 23234, 12200);
-        Product product4 = new Product(11L, "Cup", 13413, 23300);
-
         List<Product> list = new ArrayList<>();
         list.add(product1);
         list.add(product2);
@@ -83,7 +90,6 @@ public class ControllerTest {
     @DisplayName("post 를 통해 product를 저장할 수 있는지")
     void tdd_for_saveProduct() throws Exception{
         // given
-        Product product1 = new Product(1L, "Book", 3, 20000);
         String productJson = new ObjectMapper().writeValueAsString(product1);
 
         given(productService.saveProduct(product1)).willReturn(1L);
@@ -107,7 +113,6 @@ public class ControllerTest {
     @DisplayName("제품 삭제 가능한지?")
     void tdd_for_delete() throws Exception{
         // given
-        Product product1 = new Product(1L, "Book", 100, 1000);
         given(productService.deleteProduct(1L)).willReturn(1L);
 
 
