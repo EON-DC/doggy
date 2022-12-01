@@ -10,6 +10,4 @@ public class EonApplication {
         SpringApplication.run(EonApplication.class, args);
     }
 
-
-
 }
