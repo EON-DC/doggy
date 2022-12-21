@@ -1,37 +1,37 @@
 package com.doggy.mapper;
 
-import org.springframework.stereotype.Component;
+import com.doggy.domain.Post;
+import com.doggy.service.PostService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import java.util.HashMap;
+import java.util.List;
+import java.util.Objects;
 
-@Component
+@Slf4j
 public class PlaceHolderGrep {
 
-    private HashMap<Integer, String> store ;
-
-    private String url = "https://catfact.ninja/fact?max_length=140";
+    private PostService postService;
 
 
-    public PlaceHolderGrep() {
-        store = new HashMap<>();
+    private String url = "https://jsonplaceholder.typicode.com/posts";
+
+
+    public PlaceHolderGrep(PostService postService) {
+        this.postService = postService;
         WebClient.Builder builder = WebClient.builder();
 
-        int index = 0;
+        List<Post> response = Objects.requireNonNull(builder.build()
+                .get()
+                .uri(url)
+                .retrieve()
+                .bodyToMono(new ParameterizedTypeReference<List<Post>>() {
+                }).block());
 
-        for (int i = 0; i < 5; i++) {
-            String catFact = builder.build()
-                    .get()
-                    .uri(url)
-                    .retrieve()
-                    .bodyToMono(String.class)
-                    .block();
-            store.put(index++, catFact);
+        for (Post post : response) {
+            //store.put(post.getId(), post);
+            postService.add(post);
         }
-    }
-
-    public String getStoreAsString() {
-        String collect = String.join("\n", store.values());
-        return collect;
     }
 }
