@@ -7,14 +7,12 @@ import lombok.Setter;
 import org.springframework.beans.BeanUtils;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Entity
 @Getter
 @Setter
 public class PostEntity {
 
-    @Id
     private Integer id;
     private Integer userId;
     private String title;
