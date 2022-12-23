@@ -4,6 +4,8 @@ spring:
     username: sa
     password:
     url: jdbc:h2:tcp://localhost/~/product
+    name : people
+    generate-unique-name: false
   jpa:
     show-sql: true
     hibernate:
@@ -12,3 +14,5 @@ spring:
   h2:
     console:
       enabled: true
+
+
