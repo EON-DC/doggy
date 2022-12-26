@@ -3,10 +3,7 @@ package com.doggy;
 import com.doggy.domain.Post;
 import com.doggy.mapper.PlaceHolderGrep;
 import com.doggy.service.PostService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,5 +27,10 @@ public class HomeController {
     @GetMapping(path = "{id}")
     public Post getPost(@PathVariable Integer id) {
         return postService.get(id);
+    }
+
+    @PostMapping
+    public Post addPost(@RequestBody Post post) {
+        return postService.add(post);
     }
 }
